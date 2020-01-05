@@ -1,0 +1,31 @@
+{
+  "name": "chip8-wasm",
+  "version": "1.0.0",
+  "description": "Chip-8 emulator written in C and compiled to WebAssembly",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shlomnissan/chip8-wasm.git"
+  },
+  "author": "Shlomi Nissan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shlomnissan/chip8-wasm/issues"
+  },
+  "homepage": "https://github.com/shlomnissan/chip8-wasm#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.4"
+  }
+}

@@ -16,7 +16,7 @@ class Emulator {
 public:
     bool Boot();
     bool LoadRom(const string& kFile);
-    void Start();
+    void Run();
 
     Emulator(): display(Display::Instance()),
                 input(Input::Instance()),

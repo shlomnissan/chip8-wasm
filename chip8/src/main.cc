@@ -1,5 +1,6 @@
 #include <iostream>
 #include <emscripten.h>
+#include <emscripten/bind.h>
 
 #include "emulator.h"
 
@@ -11,6 +12,13 @@ void do_error(const string& kErrorMessage) {
 
 void main_loop() {
     chip8.Run();
+}
+
+extern "C" {
+    // Wrap in extern C to prevent C++ name mangling
+    void load_game(char *data) {
+        // TODO: load game here
+    }
 }
 
 int main() {

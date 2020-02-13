@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const arrayBuffer = await response.arrayBuffer();
         const gameData = new Uint8Array(arrayBuffer);
 
-        const loadGame = Module.cwrap('init', 'null', ['array']);
+        const loadGame = Module.cwrap('load_game', 'null', ['array']);
         loadGame(gameData);
     }
 });

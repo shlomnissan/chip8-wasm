@@ -16,10 +16,11 @@
 class Chip8 {
 public:
     Chip8();
-    void SaveRom(const void *source, size_t size);
+    void SaveRom(const void *source);
     void Reset();
     void Cycle();
     void UpdateTimers();
+
 private:
     typedef std::unordered_map<uint8_t, std::function<void()> > operations_set;
 

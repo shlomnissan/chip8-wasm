@@ -17,7 +17,7 @@ void main_loop() {
 extern "C" {
     // Wrap in extern C to prevent C++ name mangling
     void load_game(char *data) {
-        // TODO: load game here
+        chip8.FlashRom(data);
     }
 }
 
@@ -25,12 +25,7 @@ int main() {
     const string kRom = "../roms/INVADERS.ch8";
 
     if (chip8.Boot()) {
-        if (chip8.LoadRom(kRom)) {
-            emscripten_set_main_loop(main_loop,/* fps */ -1, /* infinite loop */ true);
-        } else {
-            do_error("Failed to open " + kRom);
-            return EXIT_FAILURE;
-        }
+        emscripten_set_main_loop(main_loop,/* fps */ -1, /* infinite loop */ true);
     } else {
         do_error("Failed to boot emulator");
         return EXIT_FAILURE;

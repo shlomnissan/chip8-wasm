@@ -15,6 +15,8 @@ bool Emulator::Boot() {
 }
 
 bool Emulator::LoadRom(const string& kFile) {
+    ToggleState(kRomLoading);  // Turn on rom loading state
+
     std::ifstream rom (kFile);
     if (!rom) return false;
 
@@ -29,17 +31,25 @@ bool Emulator::LoadRom(const string& kFile) {
             std::istreambuf_iterator<char>(rom),
             std::istreambuf_iterator<char>());
 
-    chip8.SaveRom(buffer.data(), buffer.size());
+
+    ToggleState(kRomLoading);  // Turn off rom loading state
+    FlashRom(buffer.data());
 
     return true;
 }
 
+void Emulator::FlashRom(char *data) {
+    chip8.SaveRom(data);
+    ToggleState(kRomLoaded);
+}
+
 void Emulator::Run() {
-    chip8.UpdateTimers();
-    window.PollEvents(input);
-    for (int i = 0; i < kCyclePerSecond; ++i) {
-        chip8.Cycle();
+    if (CheckState(kRomLoaded) && !CheckState(kRomLoading)) {
+        chip8.UpdateTimers();
+        window.PollEvents(input);
+        for (int i = 0; i < kCyclePerSecond; ++i) {
+            chip8.Cycle();
+        }
+        window.Draw(display);
     }
-    window.Draw(display);
-    
 }

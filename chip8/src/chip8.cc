@@ -57,9 +57,9 @@ Chip8::Chip8(): memory({0}),
     BindOperations();
 }
 
-void Chip8::SaveRom(const void *source, size_t size) {
+void Chip8::SaveRom(const void *source) {
     // 0x200 (512) Start of most Chip-8 programs
-    memcpy(memory.data() + kStartAddress, source, size);
+    memcpy(memory.data() + kStartAddress, source, memory.size());
 }
 
 void Chip8::Reset() {
@@ -101,8 +101,8 @@ void Chip8::Cycle() {
         }
     } catch (const std::exception& e) {
         std::cerr << e.what() << '\n'
-                  << "Failed to execute opcode: "
-                  << std::hex << opcode << '\n';
+                << "Failed to execute opcode: "
+                << std::hex << opcode << '\n';
     }
 }
 

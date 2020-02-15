@@ -30,7 +30,7 @@ https://shlomnissan.github.io/chip8-wasm/
 ## MIT license:	
 
  ```	
-Copyright (c) 2019 Shlomi Nissan	
+Copyright (c) 2020 Shlomi Nissan	
  Permission is hereby granted, free of charge, to any person obtaining a copy	
 of this software and associated documentation files (the "Software"), to deal	
 in the Software without restriction, including without limitation the rights	

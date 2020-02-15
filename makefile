@@ -5,7 +5,6 @@ chip8-wasm:
 	./chip8/src/emulator.cc \
 	./chip8/src/window.cc \
 	./chip8/src/interpreter.cc \
-	--preload-file roms/INVADERS.ch8 \
 	-s --std=c++17 \
 	-s WASM=1 \
 	-s USE_SDL=2 \

@@ -59,7 +59,7 @@ Chip8::Chip8(): memory({0}),
 
 void Chip8::SaveRom(const void *source) {
     // 0x200 (512) Start of most Chip-8 programs
-    memcpy(memory.data() + kStartAddress, source, memory.size());
+    memcpy(memory.data() + kStartAddress, source, memory.size() - kStartAddress);
 }
 
 void Chip8::Reset() {
@@ -72,6 +72,8 @@ void Chip8::Reset() {
     sp = 0;
     t_delay = 0;
     t_sound = 0;
+
+    display.ClearScreen();
 }
 
 void Chip8::Cycle() {

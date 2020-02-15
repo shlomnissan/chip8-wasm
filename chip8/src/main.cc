@@ -22,8 +22,6 @@ extern "C" {
 }
 
 int main() {
-    const string kRom = "../roms/INVADERS.ch8";
-
     if (chip8.Boot()) {
         emscripten_set_main_loop(main_loop,/* fps */ -1, /* infinite loop */ true);
     } else {

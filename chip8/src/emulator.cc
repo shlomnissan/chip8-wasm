@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 #include <emscripten.h>
+#include <iostream>
 
 #include "emulator.h"
 
@@ -39,6 +40,12 @@ bool Emulator::LoadRom(const string& kFile) {
 }
 
 void Emulator::FlashRom(char *data) {
+    if (CheckState(kRomLoaded)) {
+        // Rom is already loaded, reset state
+        ToggleState(kRomLoaded);
+        chip8.Reset();
+    }
+
     chip8.SaveRom(data);
     ToggleState(kRomLoaded);
 }

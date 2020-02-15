@@ -8,13 +8,6 @@ https://shlomnissan.github.io/chip8-wasm/
 
 ![chip8](https://user-images.githubusercontent.com/3165988/61174034-d79e8380-a54f-11e9-9ee5-05351d67d9b5.gif)
 
-## TODO's:
-
-- [ ] Add system sound using JavaScript
-- [x] Build a simple UI
-- [ ] Fix memory issues, improve performance
-- [ ] Apply an optional flicker fix
-
 ## Installation:
 
 1. Install Emscripten: https://emscripten.org/docs/getting_started/downloads.html

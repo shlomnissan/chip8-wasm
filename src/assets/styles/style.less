@@ -1,59 +1,72 @@
+@color-background: #FFFFFF;
+@color-primary: #C4BDAF;
+@color-black: #000000;
+
+@shell-width: 846px;
+@shell-height: 536px;
+@canvas-width: 640px;
+@canvas-height: 320px;
+
+@font-primary: 'Press Start 2P', cursive;
+
 body {
-    background-color: #ffffff;
-    color: #C4BDAF;
-    font-family: 'Press Start 2P', cursive;
+    background-color: @color-background;
+    color: @color-primary; 
+    font-family: @font-primary;
     background-image: url('../images/background.png');
     background-repeat: repeat-x;
-}
-#shell {
-    width: 847px;
-    height: 537px;
-    margin: 0 auto;
-    margin-top: 80px;
-    background: url("../images/shell.png");
-}
-#canvas {
-    width: 640px;
-    height: 320px;
-    margin-top: 135px;
-    margin-left: 102px;
-    background-color: #000;
+
+    #shell {
+        width: @shell-width;
+        height: @shell-height;
+        background: url("../images/shell.png");
+        margin: 79px auto 0 auto;
+
+        #canvas {
+            width: @canvas-width;
+            height: @canvas-height;
+            margin-top: 135px;
+            margin-left: 102px;
+            background-color: @color-black;
+        }
+    }
+
+    #selection-container {
+        text-align: center;
+        margin-top: 48px;
+    }
 }
 
-#selection-container {
-    text-align: center;
-    margin-top: 48px;
-}
+
 
 .styled-select {
     display: inline-block;
-    border: 2px solid #C4BDAF;
+    border: 2px solid @color-primary;
     border-radius: 8px;
     height: 50px;
     width: 400px;
     overflow: hidden;
     padding: 0px 15px;
     position: relative;
-}
 
-.styled-select select {
-    background: transparent;
-    font-family: 'Press Start 2P', cursive;
-    color: #C4BDAF;
-    border: none;
-    font-size: 14px;
-    height: 50px;;
-    outline: 0px;
-    width: 100%;
+    select {
+        background: transparent;
+        font-family: @font-primary;
+        color: @color-primary;
+        border: none;
+        font-size: 14px;
+        height: 50px;;
+        outline: 0px;
+        width: 100%;
 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    
-    text-indent: 1px;
-    text-overflow: '';
-}
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+        text-indent: 1px;
+        text-overflow: '';
+    }
 
-.styled-select:before {
+    &:before {
         position: absolute;
         width: 10px;
         height: 6px;
@@ -61,15 +74,15 @@ body {
         top: 22px;
         content: ' ';
         background-image: url('../images/arrow.png');
+    }
 }
 
-#created {
+#footer {
     text-align: center;
     margin-top: 32px;
     font-size: 10px;
     line-height: 20px;
-}
-
-a {
-    color: #C4BDAF !important;
+    a {
+        color: @color-primary!important;
+    }
 }

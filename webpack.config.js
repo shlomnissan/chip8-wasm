@@ -9,9 +9,6 @@ module.exports = {
         path: __dirname + "/dist/",
         filename: "index.js"
     },
-    node: {	
-        fs: 'empty'	
-    },
     module: {
         rules: [
             {
@@ -32,13 +29,8 @@ module.exports = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: ["file-loader", {
-                    loader: "image-webpack-loader",
-                        options: {
-                            bypassOnDebug: true,
-                            disable: true,
-                        }
-                    },
-                ],
+                    loader: "image-webpack-loader"
+                }],
             }
         ]
     },

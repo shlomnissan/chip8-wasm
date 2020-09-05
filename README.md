@@ -14,11 +14,11 @@ https://shlomnissan.github.io/chip8-wasm/
 
 2. Clone the repository: `git clone https://github.com/shlomnissan/chip8-wasm`
 
-3. Run `make` to generate the WASM module using Emscripten
+3. `npm run make && npm run build` to generate the WASM module using Emscripten and bundle JS code. 
 
-4. Run `npm run start` to start webpack
+4. `npm run start` to start webpack development server.
 
-5. Chrome doesn't support file XHR requests so you need to open index.html from a web server.
+5. Visit `localhost:3000` to run the emulator in development mode.
 
 ## MIT license:	
 

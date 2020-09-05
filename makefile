@@ -1,10 +1,10 @@
 chip8-wasm:
 	em++ -O2 \
-	./chip8/src/main.cc \
-	./chip8/src/chip8.cc \
-	./chip8/src/emulator.cc \
-	./chip8/src/window.cc \
-	./chip8/src/interpreter.cc \
+	./chip8/main.cc \
+	./chip8/chip8.cc \
+	./chip8/emulator.cc \
+	./chip8/window.cc \
+	./chip8/interpreter.cc \
 	-s --std=c++17 \
 	-s WASM=1 \
 	-s USE_SDL=2 \

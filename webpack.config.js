@@ -1,18 +1,14 @@
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    entry: {
-        index: "./chip8/index.js",
-    },
     devServer: {
-        port: 9000
+        port: 3000
     },
     output: {
         path: __dirname + "/dist/",
-        filename: "[name].js"
+        filename: "index.js"
     },
-    node: {
-        fs: 'empty'
-      },
     module: {
         rules: [
             {
@@ -25,17 +21,30 @@ module.exports = {
                         plugins: ["@babel/plugin-syntax-dynamic-import", "@babel/transform-runtime"]
                     }
                 }
+            },
+            {
+                test: /\.less$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: ['file-loader', {
+                    loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true,
+                            disable: true,
+                        }
+                    },
+                ],
             }
         ]
     },
-    optimization: {
-        runtimeChunk: false,
-        minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true
-            })
-        ]
-    }
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.css',
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/index.html"
+        })
+    ]
 };

@@ -1,3 +1,5 @@
+require("./assets/styles/style.less");
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#game-selection").onchange = async (event) => {
         const filename = event.target.value;

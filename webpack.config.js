@@ -9,6 +9,9 @@ module.exports = {
         path: __dirname + "/dist/",
         filename: "index.js"
     },
+    node: {	
+        fs: 'empty'	
+    },
     module: {
         rules: [
             {
@@ -25,11 +28,6 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
-            },
-            {
-                test: /\.wasm$/,
-                loaders: ["wasm-loader"],
-                type: "javascript/auto"
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -49,7 +47,10 @@ module.exports = {
             filename: "style.css",
         }),
         new HtmlWebpackPlugin({
-            template: "src/index.html"
+            template: "src/index.html",
+            templateParameters: {
+                src: process.env.WEBPACK_DEV_SERVER ? "src/chip8/chip8.js" : "chip8.js"
+            }
         })
     ]
 };

@@ -1,4 +1,3 @@
-require("./chip8/chip8");
 require("./assets/styles/style.less");
 
 document.addEventListener("DOMContentLoaded", function () {

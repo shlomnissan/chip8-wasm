@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     devServer: {
@@ -27,9 +27,14 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
             },
             {
+                test: /\.wasm$/,
+                loaders: ["wasm-loader"],
+                type: "javascript/auto"
+            },
+            {
                 test: /\.(gif|png|jpe?g|svg)$/i,
-                use: ['file-loader', {
-                    loader: 'image-webpack-loader',
+                use: ["file-loader", {
+                    loader: "image-webpack-loader",
                         options: {
                             bypassOnDebug: true,
                             disable: true,
@@ -41,7 +46,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'style.css',
+            filename: "style.css",
         }),
         new HtmlWebpackPlugin({
             template: "src/index.html"

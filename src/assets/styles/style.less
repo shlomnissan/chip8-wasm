@@ -1,5 +1,5 @@
 @color-background: #FFFFFF;
-@color-primary: #C4BDAF;
+@color-primary: #A4A4A4;
 @color-black: #000000;
 
 @shell-width: 846px;
@@ -7,13 +7,17 @@
 @canvas-width: 640px;
 @canvas-height: 320px;
 
+
 @font-face {
     font-family: "primary";
-    src: url("../fonts/font.woff") format("woff");
+    src: url("../fonts/smallpixel.woff") format("woff");
     font-display: swap;
 }
-
 @font-primary: 'primary', cursive;
+
+html {
+    height: 100%;
+}
 
 body {
     background-color: @color-background;
@@ -21,12 +25,24 @@ body {
     font-family: @font-primary;
     background-image: url('../images/background.png');
     background-repeat: repeat-x;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+
+}
+
+.page-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 
     #shell {
         width: @shell-width;
         height: @shell-height;
         background: url("../images/shell.png");
-        margin: 79px auto 0 auto;
+        margin: 0 auto 0 auto;
 
         #canvas {
             width: @canvas-width;
@@ -39,28 +55,52 @@ body {
 
     #selection-container {
         text-align: center;
-        margin-top: 48px;
+        margin-top: 24px;
+    }
+
+    #footer {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 12px;
+        line-height: 20px;
+        color: lighten(@color-primary, 15%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #github {
+            display: block;
+            width: 39px;
+            height: 44px;
+            background: url('../images/github.png');
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: @color-primary;
+        }
     }
 }
 
-
-
 .styled-select {
     display: inline-block;
-    border: 2px solid @color-primary;
-    border-radius: 8px;
-    height: 50px;
+    border: 0px;
+    height: 54px;
     width: 400px;
+    background-repeat: no-repeat;
     overflow: hidden;
+    background: url('../images/select.png');
     padding: 0px 15px;
+    background-color: @color-background;
     position: relative;
-
+    -webkit-font-smoothing : none;
+    
     select {
         background: transparent;
         font-family: @font-primary;
         color: @color-primary;
         border: none;
-        font-size: 23px;
+        font-size: 16px;
         height: 50px;;
         outline: 0px;
         width: 100%;
@@ -70,25 +110,5 @@ body {
         
         text-indent: 1px;
         text-overflow: '';
-    }
-
-    &:before {
-        position: absolute;
-        width: 10px;
-        height: 6px;
-        right: 20px;
-        top: 22px;
-        content: ' ';
-        background-image: url('../images/arrow.png');
-    }
-}
-
-#footer {
-    text-align: center;
-    margin-top: 32px;
-    font-size: 10px;
-    line-height: 20px;
-    a {
-        color: @color-primary!important;
     }
 }

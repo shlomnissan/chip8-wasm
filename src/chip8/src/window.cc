@@ -59,7 +59,7 @@ void Window::Draw(Display &display) {
 }
 
 void Window::DrawPixel(int x, int y, int scale) {
-    SDL_SetRenderDrawColor(renderer, 0x33, 0xFF, 0x66, 0xFF);
+    SDL_SetRenderDrawColor(renderer, 0xEF, 0xB3, 0xEE, 0xFF);
 
     SDL_Rect rect {x * scale, y * scale, scale, scale};
     SDL_RenderDrawRect(renderer, &rect);

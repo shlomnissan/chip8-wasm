@@ -1,44 +1,84 @@
+@font-face {
+  font-family: "primary";
+  src: url(e0adce3711f533827d8c07880c511699.woff) format("woff");
+  font-display: swap;
+}
+html {
+  height: 100%;
+}
 body {
-  background-color: #ffffff;
-  color: #C4BDAF;
-  font-family: 'Press Start 2P', cursive;
-  background-image: url(6008df7788c89b5ae2c4616c3427e6d1.png);
+  background-color: #FFFFFF;
+  color: #A4A4A4;
+  font-family: 'primary', cursive;
+  background-image: url(e9b24198842012318f62b2aeea96d3dd.png);
   background-repeat: repeat-x;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
 }
-#shell {
-  width: 847px;
-  height: 537px;
-  margin: 0 auto;
-  margin-top: 80px;
-  background: url(833a422603081e941050cfe0f7641304.png);
+.page-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-#canvas {
+.page-wrapper #shell {
+  width: 846px;
+  height: 536px;
+  background: url(9b2cda61f608b43cf61eb6d9c9e1c7aa.png);
+  margin: 0 auto 0 auto;
+}
+.page-wrapper #shell #canvas {
   width: 640px;
   height: 320px;
   margin-top: 135px;
   margin-left: 102px;
-  background-color: #000;
+  background-color: #000000;
 }
-#selection-container {
+.page-wrapper #selection-container {
   text-align: center;
-  margin-top: 48px;
+  margin-top: 24px;
+}
+.page-wrapper #footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #cacaca;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-wrapper #footer #github {
+  display: block;
+  width: 39px;
+  height: 44px;
+  background: url(17b3e8ef7c14c8a0ad4ed6b1d0657c8f.png);
+  margin-bottom: 16px;
+}
+.page-wrapper #footer a {
+  color: #A4A4A4;
 }
 .styled-select {
   display: inline-block;
-  border: 2px solid #C4BDAF;
-  border-radius: 8px;
-  height: 50px;
+  border: 0px;
+  height: 54px;
   width: 400px;
+  background-repeat: no-repeat;
   overflow: hidden;
+  background: url(eeea21db276e3b9ac81ca580c743488e.png);
   padding: 0px 15px;
+  background-color: #FFFFFF;
   position: relative;
+  -webkit-font-smoothing: none;
 }
 .styled-select select {
   background: transparent;
-  font-family: 'Press Start 2P', cursive;
-  color: #C4BDAF;
+  font-family: 'primary', cursive;
+  color: #A4A4A4;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   height: 50px;
   outline: 0px;
   width: 100%;
@@ -46,23 +86,5 @@ body {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-}
-.styled-select:before {
-  position: absolute;
-  width: 10px;
-  height: 6px;
-  right: 20px;
-  top: 22px;
-  content: ' ';
-  background-image: url(f2daa8a365e5bcd53573a2abb733be1a.png);
-}
-#created {
-  text-align: center;
-  margin-top: 32px;
-  font-size: 10px;
-  line-height: 20px;
-}
-a {
-  color: #C4BDAF !important;
 }
 

@@ -4,9 +4,9 @@ Created in the '70s by Joseph Weisbecker, Chip-8 is a virtual machine that allow
 
 ## Demo:
 
-https://shlomnissan.github.io/chip8-wasm/
+https://chip8.io
 
-![chip8](https://user-images.githubusercontent.com/3165988/61174034-d79e8380-a54f-11e9-9ee5-05351d67d9b5.gif)
+![chip8-anim](https://user-images.githubusercontent.com/3165988/92337170-a1c63380-f05c-11ea-9fa2-74908a6417de.gif)
 
 ## Installation:
 

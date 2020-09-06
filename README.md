@@ -1,6 +1,6 @@
 # chip8-wasm [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.com/shlomnissan/chip8-wasm.svg?branch=master)](https://travis-ci.com/shlomnissan/chip8-wasm)
 
-Created in the '70s by Joseph Weisbecker, Chip-8 is a virtual machine that allowed games to be more easily programmed for early microcomputers. This emulator lets you load Chip-8 games in JavaScript and play them in the browser using WebAssembly.
+Building a Chip 8 emulator is my goto project for exploring new programming languages and technologies. I decided to port the emulator to the web using Emscripten to get familiar with the toolchain and WebAssembly. The source code for the emulator is written in modern C++ using SDL.
 
 ## Demo:
 

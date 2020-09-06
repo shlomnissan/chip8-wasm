@@ -7,7 +7,13 @@
 @canvas-width: 640px;
 @canvas-height: 320px;
 
-@font-primary: 'Press Start 2P', cursive;
+@font-face {
+    font-family: "primary";
+    src: url("../fonts/font.woff") format("woff");
+    font-display: swap;
+}
+
+@font-primary: 'primary', cursive;
 
 body {
     background-color: @color-background;
@@ -54,7 +60,7 @@ body {
         font-family: @font-primary;
         color: @color-primary;
         border: none;
-        font-size: 14px;
+        font-size: 23px;
         height: 50px;;
         outline: 0px;
         width: 100%;

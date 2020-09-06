@@ -1,4 +1,4 @@
-# chip8-wasm [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.com/shlomnissan/chip8-wasm.svg?branch=master)](https://travis-ci.com/shlomnissan/chip8-wasm) [![Netlify Status](https://api.netlify.com/api/v1/badges/cba35165-512a-4f17-bdee-1a9e66f2e100/deploy-status)](https://app.netlify.com/sites/awesome-swirles-6768d3/deploys)
+# chip8 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.com/shlomnissan/chip8-wasm.svg?branch=master)](https://travis-ci.com/shlomnissan/chip8-wasm) [![Netlify Status](https://api.netlify.com/api/v1/badges/cba35165-512a-4f17-bdee-1a9e66f2e100/deploy-status)](https://app.netlify.com/sites/awesome-swirles-6768d3/deploys)
 
 Building a Chip 8 emulator is my goto project for exploring new programming languages and technologies. I decided to port the emulator to the web using Emscripten to get familiar with the toolchain and WebAssembly. The source code for the emulator is written in modern C++ using SDL.
 
